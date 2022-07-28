@@ -1,0 +1,6 @@
+{
+  "parent": "malechia:item/monado_1",
+  "textures": {
+    "layer0": "malechia:item/monado_1_active"
+  }
+}

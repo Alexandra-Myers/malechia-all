@@ -1,0 +1,15 @@
+{
+  "name": "malechia:infinity_temple/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "malechia:infinity_temple",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

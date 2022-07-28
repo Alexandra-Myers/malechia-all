@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "net.alexandra.malechia.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "MalechiaMixin"
+  ],
+  "mixins": [
+    "ComposterBlockMixin",
+    "DebugStickMixin",
+    "MiningToolMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

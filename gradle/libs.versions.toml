@@ -1,0 +1,27 @@
+[versions]
+# The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
+minecraft = "1.19"
+
+fabric_shield_lib = "v1.6.0-1.19"
+malechia_lib = "1.1.0"
+customportalapi = "0.0.1-beta52-1.19"
+nbtcrafting = "2.1.3+mc1.19"
+terrablender = "1.19-2.0.0.117"
+libblockattributes = "0.11.0-pre.1"
+
+[libraries]
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+
+fabric_shield_lib = { module = "com.github.CrimsonDawn45:fabric_shield_lib", version.ref = "fabric_shield_lib" }
+malechia_lib = { module = "net.alexandra:malechia-lib", version.ref = "malechia_lib" }
+customportalapi = { module = "net.kyrptonaught:customportalapi", version.ref = "customportalapi" }
+terrablender = { module = "com.github.glitchfiend:TerraBlender-fabric", version.ref = "terrablender" }
+nbtcrafting = { module = "de.siphalor:nbtcrafting-1.19", version.ref = "nbtcrafting" }
+libblockattributes = { module = "alexiil.mc.lib:libblockattributes-all", version.ref = "libblockattributes" }
+
+# If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
+# [bundles]
+# example = ["example-a", "example-b", "example-c"]
+
+[plugins]
+quilt_loom = { id = "dev.architectury.loom", version = "0.11.0-SNAPSHOT" }
