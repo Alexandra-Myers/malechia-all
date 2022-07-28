@@ -3,4 +3,3 @@ accessible class net/minecraft/item/ItemStack
 accessible method net/minecraft/entity/Entity getPermissionLevel ()I
 accessible method net/minecraft/block/SpreadableBlock canSurvive (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z
 accessible method net/minecraft/block/SpreadableBlock canSpread (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z
-accessible method net/minecraft/client/item/ModelPredicateProviderRegistry register (Lnet/minecraft/item/Item;Lnet/minecraft/util/Identifier;Lnet/minecraft/client/item/UnclampedModelPredicateProvider;)V
