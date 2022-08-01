@@ -18,9 +18,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "net.alexandra.malechia.MalechiaMod",
-			"client": "net.alexandra.malechia.MalechiaClient",
-			"server": "net.alexandra.malechia.MalechiaServer"
+			"init": "net.alexandra.malechia.MalechiaModQuilt",
+			"client": "net.alexandra.malechia.MalechiaClient"
 		},
 		"depends": [
 			{
@@ -38,5 +37,8 @@
 		]
 	},
 	"accessWidener": "malechia.accesswidener",
-	"mixin": "malechia.mixins.json"
+	"mixin": [
+		"malechia.mixins.json",
+		"examplemod-common.mixins.json"
+	]
 }

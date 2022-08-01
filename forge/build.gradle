@@ -1,6 +1,19 @@
+buildscript {
+    dependencies {
+        // Make sure this version matches the one included in Kotlin for Forge
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10'
+        // OPTIONAL Gradle plugin for Kotlin Serialization
+        classpath 'org.jetbrains.kotlin:kotlin-serialization:1.7.10'
+    }
+}
+
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
+
+apply plugin: 'kotlin'
+// OPTIONAL Kotlin Serialization plugin
+apply plugin: 'kotlinx-serialization'
 
 architectury {
     platformSetupLoomIde()
@@ -16,6 +29,8 @@ loom {
     }
 }
 
+apply from: 'https://raw.githubusercontent.com/thedarkcolour/KotlinForForge/site/thedarkcolour/kotlinforforge/gradle/kff-3.6.0.gradle'
+
 configurations {
     common
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
@@ -25,12 +40,18 @@ configurations {
 }
 
 dependencies {
+//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
+//    modImplementation "net.alexandra.atlas:customportallib:1.0.0"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "17"
 }
 
 processResources {

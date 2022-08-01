@@ -1,6 +1,5 @@
 package net.alexandra.malechia.world.biome;
 
-import net.alexandra.malechia.world.feature.ModTreePlacedFeatures;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStep;
@@ -12,12 +11,12 @@ public class EtherealBiomeCreator {
         }
 
         public static Biome createEtherealCore() {
-            GenerationSettings.Builder builder = new GenerationSettings.Builder().feature(GenerationStep.Feature.VEGETAL_DECORATION, ModTreePlacedFeatures.ETHEREAL_TREE_PLACED);
+            GenerationSettings.Builder builder = new GenerationSettings.Builder();
             return EtherealBiomeCreator.createEtherealBiome(builder);
         }
 
         public static Biome createAwakenedEtherealCore() {
-            GenerationSettings.Builder builder = new GenerationSettings.Builder().feature(GenerationStep.Feature.VEGETAL_DECORATION, ModTreePlacedFeatures.ETHEREAL_TREE_PLACED);
+            GenerationSettings.Builder builder = new GenerationSettings.Builder();
             return EtherealBiomeCreator.createEtherealBiome(builder);
         }
 }

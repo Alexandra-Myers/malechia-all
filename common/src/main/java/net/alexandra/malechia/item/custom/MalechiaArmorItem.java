@@ -13,12 +13,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MalechiaArmorItem extends ArmorItem {
-    private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(MalechiaArmorMaterials.MALECHIA,
-                            new StatusEffectInstance(ModEffects.PROTECTED.get(), 800, 0)).build();
+    private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
+            .put(MalechiaArmorMaterials.MALECHIA,
+                    new StatusEffectInstance(ModEffects.PROTECTED.get(), 800, 0)).build();
 
     public MalechiaArmorItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
         super(material, slot, settings);

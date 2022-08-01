@@ -6,9 +6,9 @@
     "MalechiaMixin"
   ],
   "mixins": [
-    "ComposterBlockMixin",
     "DebugStickMixin",
-    "MiningToolMixin"
+    "MiningToolMixin",
+    "ComposterBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -9,6 +9,7 @@ import net.minecraft.world.gen.feature.PlacementModifier;
 import java.util.List;
 
 public class ModOreFeatures {
+
     public static List<PlacementModifier> orePlacementModifiers(PlacementModifier firstModifier, PlacementModifier secondModifier) {
         return List.of(firstModifier, InSquarePlacementModifier.getInstance(), secondModifier, BiomePlacementModifier.getInstance());
     }
