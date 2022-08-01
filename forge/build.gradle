@@ -29,7 +29,7 @@ loom {
     }
 }
 
-apply from: 'https://raw.githubusercontent.com/thedarkcolour/KotlinForForge/site/thedarkcolour/kotlinforforge/gradle/kff-3.6.0.gradle'
+apply from: 'https://raw.githubusercontent.com/thedarkcolour/KotlinForForge/site/thedarkcolour/kotlinforforge/gradle/kff-3.6.0-architectury.gradle'
 
 configurations {
     common
