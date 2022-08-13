@@ -6,11 +6,8 @@
     "malechia:boss_essence_iron_block",
     "malechia:allian_ore",
     "malechia:alotic_ore",
-    "malechia:deepslate_alotic_ore",
     "malechia:auraum_ore",
-    "malechia:deepslate_auraum_ore",
     "malechia:chryon_ore",
-    "malechia:deepslate_chryon_ore",
     "malechia:ereth_ore",
     "malechia:deepslate_ereth_ore",
     "malechia:halorium_ore",
@@ -20,10 +17,7 @@
     "malechia:locronite_ore",
     "malechia:deepslate_locronite_ore",
     "malechia:quarite_ore",
-    "malechia:deepslate_quarite_ore",
     "malechia:mycronium_ore",
-    "malechia:deepslate_mycronium_ore",
-    "malechia:quarite_ore",
-    "malechia:deepslate_quarite_ore"
+    "malechia:deepslate_mycronium_ore"
   ]
 }

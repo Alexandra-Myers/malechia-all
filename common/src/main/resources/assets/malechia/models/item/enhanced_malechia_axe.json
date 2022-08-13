@@ -1,5 +1,5 @@
 {
-  "parent": "malechia:item/malechia_axe",
+  "parent": "item/handheld",
   "textures": {
     "layer0": "malechia:item/enhanced_malechia_axe"
   }

@@ -3,12 +3,8 @@
   "package": "net.alexandra.malechia.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "MalechiaMixin"
   ],
   "mixins": [
-    "DebugStickMixin",
-    "MiningToolMixin",
-    "ComposterBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

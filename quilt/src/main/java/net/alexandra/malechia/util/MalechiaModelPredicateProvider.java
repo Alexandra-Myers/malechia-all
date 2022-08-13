@@ -5,11 +5,10 @@ import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-import java.util.Map;
-
 public class MalechiaModelPredicateProvider {
     public static void registerModModels() {
         registerBow(ModItems.MALECHIA_BOW.get());
+        registerBow(ModItems.ENHANCED_MALECHIA_BOW.get());
 		registerMonado(ModItems.MONADO_1.get());
     }
 

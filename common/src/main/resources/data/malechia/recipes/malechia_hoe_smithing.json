@@ -1,36 +1,12 @@
 {
-  "type": "nbtcrafting:smithing",
+  "type": "minecraft:smithing",
   "base": {
     "item": "minecraft:netherite_hoe"
   },
-  "ingredient": {
+  "addition": {
     "item": "malechia:malechia_block"
   },
   "result": {
-    "item": "malechia:malechia_hoe",
-    "data": {
-      "display": {
-        "Name": "{\"translate\": \"item.malechia.enhanced_malechia_hoe\", \"italic\": \"false\"}"
-      },
-      "CustomModelData": 1,
-      "Enchantments": [
-        {
-          "id": "minecraft:efficiency",
-          "lvl": 10
-        },
-        {
-          "id": "minecraft:fortune",
-          "lvl": 5
-        },
-        {
-          "id": "minecraft:unbreaking",
-          "lvl": 10
-        },
-        {
-          "id": "minecraft:mending",
-          "lvl": 1
-        }
-      ]
-    }
+    "item": "malechia:enhanced_malechia_hoe"
   }
 }

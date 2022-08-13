@@ -6,7 +6,7 @@ import net.alexandra.malechia.dimension.ModDimensions;
 import net.alexandra.malechia.effects.ModEffects;
 import net.alexandra.malechia.enchantments.ModEnchantments;
 import net.alexandra.malechia.item.ModItems;
-import net.alexandra.malechia.tag.MalechiaBlockTags;
+import net.alexandra.malechia.registry.ComposterRegistry;
 import net.alexandra.malechia.util.ModRegistries;
 import net.alexandra.malechia.world.biome.MalechiaBuiltinBiomes;
 import net.alexandra.malechia.world.gen.ModWorldGen;
@@ -16,7 +16,6 @@ import net.minecraft.util.Identifier;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class MalechiaModQuilt implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -27,7 +26,14 @@ public class MalechiaModQuilt implements ModInitializer {
 
 	@Override
 	public void onInitialize(ModContainer mod) {
-		MalechiaMod.init();
+		ModEffects.init();
+		ModBlocks.init();
+		ModItems.init();
+		ModEnchantments.init();
+		MalechiaBuiltinBiomes.init();
+		ModDimensions.register();
+		ModWorldGen.generateModWorldGen();
+		ComposterRegistry.init();
 		LOGGER.info("Malechia Quilt is starting!");
 		QuiltOnlyBlocks.registerQuiltBlocks();
 		CustomPortalBuilder.beginPortal()

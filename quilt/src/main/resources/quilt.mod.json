@@ -36,7 +36,7 @@
 			}
 		]
 	},
-	"accessWidener": "malechia.accesswidener",
+	"access_widener": "malechia.accesswidener",
 	"mixin": [
 		"malechia.mixins.json",
 		"examplemod-common.mixins.json"

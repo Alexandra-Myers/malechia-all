@@ -3,6 +3,7 @@ package net.alexandra.malechia;
 import net.alexandra.malechia.block.ModBlocks;
 import net.alexandra.malechia.block.QuiltOnlyBlocks;
 import net.alexandra.malechia.util.MalechiaModelPredicateProvider;
+import net.alexandra.malechia.util.TestKeybinds;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.render.RenderLayer;
 import org.quiltmc.qsl.block.extensions.api.client.BlockRenderLayerMap;
@@ -16,5 +17,6 @@ public class MalechiaClient implements ClientModInitializer {
 		BlockRenderLayerMap.put(RenderLayer.getCutout(), QuiltOnlyBlocks.ETHEREAL_BUSH.get());
 		BlockRenderLayerMap.put(RenderLayer.getCutout(), ModBlocks.ETHEREAL_LEAVES.get());
 		MalechiaModelPredicateProvider.registerModModels();
+		TestKeybinds.initialize();
 	}
 }

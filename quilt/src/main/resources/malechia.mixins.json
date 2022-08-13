@@ -4,8 +4,10 @@
   "package": "net.alexandra.malechia.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "DebugStickMixin"
   ],
   "client": [
+    "MalechiaMixin"
   ],
   "injectors": {
     "defaultRequire": 1

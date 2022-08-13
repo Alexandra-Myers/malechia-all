@@ -2,6 +2,7 @@ package net.alexandra.malechia.forge
 
 import dev.architectury.platform.forge.EventBuses
 import net.alexandra.malechia.MalechiaMod
+import net.alexandra.malechia.MalechiaMod.MOD_ID
 import net.alexandra.malechia.block.ModBlocks
 import net.alexandra.malechia.forge.util.MalechiaModelPredicateProvider
 import net.minecraft.client.MinecraftClient
@@ -10,24 +11,22 @@ import net.minecraft.client.render.RenderLayers
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
-import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 import thedarkcolour.kotlinforforge.forge.runForDist
 
-@Mod(MalechiaModForge.ID)
+@Mod(MOD_ID)
+@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 object MalechiaModForge {
-    const val ID: String = "malechia"
 
     // the logger for our mod
-    val LOGGER: Logger = LogManager.getLogger(ID)
+    val LOGGER: Logger = LogManager.getLogger(MOD_ID)
 
     init {
-        LOGGER.log(Level.INFO, "Hello world!")
-        EventBuses.registerModEventBus("malechia", MOD_BUS)
-        LOGGER.info("Malechia Forge is starting!")
-        MalechiaMod.init()
+        EventBuses.registerModEventBus(MOD_ID, MOD_BUS)
+//        LOGGER.info("Malechia Forge is starting!")
+        net.alexandra.malechia.MalechiaMod.init()
 
         // Register the KDeferredRegister to the mod-specific event bus
 
@@ -50,18 +49,16 @@ object MalechiaModForge {
      * Fired on the mod specific event bus.
      */
     private fun onClientSetup(event: FMLClientSetupEvent) {
-        RenderLayers.setRenderLayer(ModBlocks.INFINITY_STAINED_GLASS.get(), RenderLayer.getTranslucent())
-        RenderLayers.setRenderLayer(ModBlocks.PURE_ETHEREAL_CRYSTAL_BLOCK.get(), RenderLayer.getTranslucent())
-        RenderLayers.setRenderLayer(ModBlocks.ETHEREAL_BUSH.get(), RenderLayer.getCutout())
-        RenderLayers.setRenderLayer(ModBlocks.ETHEREAL_LEAVES.get(), RenderLayer.getCutout())
+        RenderLayers.setRenderLayer(net.alexandra.malechia.block.ModBlocks.INFINITY_STAINED_GLASS.get(), RenderLayer.getTranslucent())
+        RenderLayers.setRenderLayer(net.alexandra.malechia.block.ModBlocks.PURE_ETHEREAL_CRYSTAL_BLOCK.get(), RenderLayer.getTranslucent())
+        RenderLayers.setRenderLayer(net.alexandra.malechia.block.ModBlocks.ETHEREAL_BUSH.get(), RenderLayer.getCutout())
+        RenderLayers.setRenderLayer(net.alexandra.malechia.block.ModBlocks.ETHEREAL_LEAVES.get(), RenderLayer.getCutout())
         MalechiaModelPredicateProvider.registerModModels()
-        LOGGER.log(Level.INFO, "Initializing client...")
     }
 
     /**
      * Fired on the global Forge bus.
      */
     private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {
-        LOGGER.log(Level.INFO, "Server starting...")
     }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "malechia:item/malechia_sword",
+  "parent": "item/handheld",
   "textures": {
     "layer0": "malechia:item/enhanced_malechia_sword"
   }

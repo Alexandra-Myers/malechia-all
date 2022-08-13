@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "malechia:ethereal_stone",
-    "malechia:ethereal_dirt",
-    "malechia:ethereal_grass_block"
+    "malechia:ethereal_stone"
   ]
 }
