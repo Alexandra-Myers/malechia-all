@@ -45,7 +45,7 @@ public class MalechiaBowItem extends RangedWeaponItem {
                     if (!world.isClient) {
                         ArrowItem arrowItem = (ArrowItem)(itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() : Items.ARROW);
                         PersistentProjectileEntity abstractArrow = arrowItem.createArrow(world, itemStack, player);
-                        abstractArrow.setProperties(player, player.getPitch(), player.getYaw(), 0.0F, f * 3.0F, 0.1F * fatigue);
+                        abstractArrow.setProperties(player, player.getPitch() * 15, player.getYaw() * 15, 0.0F, f * 3.0F, 0.1F * fatigue);
                         if (f == 1.0F && fatigue <= 0.5F) {
                             abstractArrow.setCritical(true);
                         }
