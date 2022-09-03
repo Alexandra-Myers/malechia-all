@@ -10,9 +10,3 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
-include("common")
-include("quilt")
-include("forge")
-
-rootProject.name = "malechia"
