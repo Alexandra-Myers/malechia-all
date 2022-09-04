@@ -148,10 +148,10 @@ public class ModItems extends ModRegistries {
             new NO_CLIP_ITEM(MalechiaToolMaterials.BOSS, new Item.Settings().maxCount(1).maxDamage(512).rarity(Rarity.EPIC).fireproof().group(ModItemGroups.MALECHIA_TOOLS)));
     public static final RegistrySupplier<ToolItem> MONADO_1 = registerToolItem("monado_1",
             new MonadoItem(MalechiaToolMaterials.UNKNOWN, 0, 1, new Item.Settings().rarity(Rarity.RARE).fireproof().group(ModItemGroups.MALECHIA_COMBAT)));
-    public static final RegistrySupplier<ToolItem> ETHEREAL_TELEPORTER = registerToolItem("ethereal_teleporter",
-            new EtherealTeleporterItem(MalechiaToolMaterials.MALECHIA, new Item.Settings().rarity(Rarity.RARE).fireproof().group(ModItemGroups.MALECHIA_MISC)));
-    public static final RegistrySupplier<ToolItem> CUSTOM_TELEPORTER = registerToolItem("custom_teleporter",
-            new CustomizableTeleporterItem(MalechiaToolMaterials.UNKNOWN, new Item.Settings().rarity(Rarity.RARE).fireproof().group(ModItemGroups.MALECHIA_MISC)));
+//    public static final RegistrySupplier<ToolItem> ETHEREAL_TELEPORTER = registerToolItem("ethereal_teleporter",
+//            new EtherealTeleporterItem(MalechiaToolMaterials.MALECHIA, new Item.Settings().rarity(Rarity.RARE).fireproof().group(ModItemGroups.MALECHIA_MISC)));
+//    public static final RegistrySupplier<ToolItem> CUSTOM_TELEPORTER = registerToolItem("custom_teleporter",
+//            new CustomizableTeleporterItem(MalechiaToolMaterials.UNKNOWN, new Item.Settings().rarity(Rarity.RARE).fireproof().group(ModItemGroups.MALECHIA_MISC)));
     protected static RegistrySupplier<Item> registerItem(String name, Item item) {
         return ITEMS.register( new Identifier(MOD_ID, name), () -> item);
     }

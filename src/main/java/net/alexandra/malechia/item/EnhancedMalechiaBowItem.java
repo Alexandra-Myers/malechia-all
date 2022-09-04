@@ -1,6 +1,7 @@
 package net.alexandra.malechia.item;
 
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -18,8 +19,8 @@ public class EnhancedMalechiaBowItem extends MalechiaBowItem{
     }
 
     @Override
-    public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-        super.onCraft(stack, world, player);
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        super.inventoryTick(stack, world, entity, slot, selected);
         stack.addEnchantment(Enchantments.POWER, 10*MULTIPLIER);
         stack.addEnchantment(Enchantments.PUNCH, 5*MULTIPLIER);
         stack.addEnchantment(Enchantments.FLAME, 2*MULTIPLIER);
