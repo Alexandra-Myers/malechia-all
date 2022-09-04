@@ -45,14 +45,14 @@ public class MalechiaBowItem extends RangedWeaponItem {
                     if (!world.isClient) {
                         ArrowItem arrowItem = (ArrowItem)(itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() : Items.ARROW);
                         PersistentProjectileEntity abstractArrow = arrowItem.createArrow(world, itemStack, player);
-                        abstractArrow.setProperties(player, player.getPitch() * 15, player.getYaw() * 15, 0.0F, f * 3.0F, 0.1F * fatigue);
+                        abstractArrow.setProperties(player, player.getPitch(), player.getYaw(), 0.0F, f * 15.0F, 0.1F * fatigue);
                         if (f == 1.0F && fatigue <= 0.5F) {
                             abstractArrow.setCritical(true);
                         }
 
                         int j = EnchantmentHelper.getLevel(Enchantments.POWER, stack);
                         if (j > 0) {
-                            abstractArrow.setDamage(abstractArrow.getDamage() + (double)j * 0.5 + 0.5);
+                            abstractArrow.setDamage(abstractArrow.getDamage() + (double)j * 0.25 + 0.5);
                         }
 
                         int k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack);
@@ -98,7 +98,7 @@ public class MalechiaBowItem extends RangedWeaponItem {
 
     public static float getPullProgress(int useTicks) {
         float f = (float)useTicks / 20.0F;
-        f = (f * f + f * 2.0F) / 1.0F;
+        f = (f * f + f * 2.0F);
         if (f > 1.0F) {
             f = 1.0F;
         }

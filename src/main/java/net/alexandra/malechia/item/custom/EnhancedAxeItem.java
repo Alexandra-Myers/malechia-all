@@ -3,6 +3,7 @@ package net.alexandra.malechia.item.custom;
 import net.alexandra.atlas.atlas_combat.AtlasCombat;
 import net.alexandra.atlas.atlas_combat.extensions.IItemStack;
 import net.alexandra.malechia.enchantments.ModEnchantments;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -26,12 +27,13 @@ public class EnhancedAxeItem extends AxeItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
-        if(((IItemStack)(Object)stack).getEnchantmentLevel(AtlasCombat.CLEAVING_ENCHANTMENT) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.EFFICIENCY) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.SWEEPING) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(ModEnchantments.HEROS_EDGE.get()) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.UNBREAKING) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.MENDING) != 0) {
+        if(stack != null
+                && EnchantmentHelper.getLevel(AtlasCombat.CLEAVING_ENCHANTMENT, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.SWEEPING, stack) == 0
+                && EnchantmentHelper.getLevel(ModEnchantments.HEROS_EDGE.get(), stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.UNBREAKING, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.MENDING, stack) == 0) {
             stack.addEnchantment(AtlasCombat.CLEAVING_ENCHANTMENT, 5 * MULTIPLIER);
             stack.addEnchantment(Enchantments.EFFICIENCY, 10 * MULTIPLIER);
             stack.addEnchantment(Enchantments.SWEEPING, 5 * MULTIPLIER);

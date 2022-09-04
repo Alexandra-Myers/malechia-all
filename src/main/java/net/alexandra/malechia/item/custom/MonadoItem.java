@@ -43,14 +43,14 @@ public class MonadoItem extends ToolItem {
 		super(toolMaterial, settings);
 		this.activeAttackBoost = tier*0.5f;
 		this.attackDamage = (float)i + toolMaterial.getAttackDamage() + 10;
-		this.modifier = new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)this.attackDamage, EntityAttributeModifier.Operation.ADDITION);
+		this.modifier = new EntityAttributeModifier(WeaponType.BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)this.attackDamage, EntityAttributeModifier.Operation.ADDITION);
 		builder.put(
 				EntityAttributes.GENERIC_ATTACK_DAMAGE,
 				modifier
 		);
 		builder.put(
 				EntityAttributes.GENERIC_ATTACK_SPEED,
-				new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)3.0, EntityAttributeModifier.Operation.ADDITION)
+				new EntityAttributeModifier(WeaponType.BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)1.0, EntityAttributeModifier.Operation.ADDITION)
 		);
 		builder.put(
 				NewAttributes.ATTACK_REACH,
@@ -62,7 +62,7 @@ public class MonadoItem extends ToolItem {
 		);
 		builder2.put(
 				EntityAttributes.GENERIC_ATTACK_SPEED,
-				new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)4.0, EntityAttributeModifier.Operation.ADDITION)
+				new EntityAttributeModifier(WeaponType.BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)2.0, EntityAttributeModifier.Operation.ADDITION)
 		);
 		builder2.put(
 				NewAttributes.ATTACK_REACH,

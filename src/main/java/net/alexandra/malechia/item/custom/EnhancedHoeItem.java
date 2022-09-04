@@ -2,6 +2,7 @@ package net.alexandra.malechia.item.custom;
 
 import net.alexandra.atlas.atlas_combat.extensions.IEnchantmentHelper;
 import net.alexandra.atlas.atlas_combat.extensions.IItemStack;
+import net.alexandra.malechia.enchantments.ModEnchantments;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
@@ -26,12 +27,13 @@ public class EnhancedHoeItem extends HoeItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
-        if(((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.FORTUNE) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.LOOTING) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.FIRE_ASPECT) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.EFFICIENCY) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.UNBREAKING) != 0
-                && ((IItemStack)(Object)stack).getEnchantmentLevel(Enchantments.MENDING) != 0) {
+        if(stack != null
+                && EnchantmentHelper.getLevel(Enchantments.FORTUNE, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.LOOTING, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.FIRE_ASPECT, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.UNBREAKING, stack) == 0
+                && EnchantmentHelper.getLevel(Enchantments.MENDING, stack) == 0) {
             stack.addEnchantment(Enchantments.FORTUNE, 5 * MULTIPLIER);
             stack.addEnchantment(Enchantments.LOOTING, 5 * MULTIPLIER);
             stack.addEnchantment(Enchantments.FIRE_ASPECT, 2 * MULTIPLIER);
